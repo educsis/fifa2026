@@ -9,6 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </footer>
 </div>
 <div id="toast-container" class="toast-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 <script src="<?= base_url('assets/js/app.js') ?>"></script>
 </body>
 </html>

@@ -14,21 +14,24 @@ function updateCsrfToken(newHash) {
 }
 
 function showToast(message, type = "success") {
-  const container = document.getElementById("toast-container");
-  if (!container) return;
+  if (window.Swal && typeof window.Swal.fire === "function") {
+    Swal.fire({
+      icon: type === "error" ? "error" : "success",
+      title: type === "error" ? "Error" : "Listo",
+      text: message,
+      toast: true,
+      position: "top-end",
+      timer: 4000,
+      timerProgressBar: true,
+      showConfirmButton: false,
+      customClass: {
+        popup: "swal2-toast-popup",
+      },
+    });
+    return;
+  }
 
-  const toast = document.createElement("div");
-  toast.className =
-    "toast-card w-full max-w-sm rounded-3xl border border-white/10 bg-slate-950/95 p-4 text-sm text-slate-100 shadow-2xl shadow-slate-950/20";
-  toast.innerHTML = `<div class="flex items-start justify-between gap-4 p4"><div class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl ${type === "error" ? "bg-rose-500/15 text-rose-300" : "bg-emerald-400/15 text-emerald-300"}">${type === "error" ? "⚠️" : "✅"}</span><div><p class="font-semibold">${type === "error" ? "Error" : "Listo"}</p><p class="mt-1 text-slate-400">${message}</p></div></div><button class="text-slate-400 transition hover:text-white">×</button></div>`;
-  container.appendChild(toast);
-
-  const closeButton = toast.querySelector("button");
-  closeButton.addEventListener("click", () => toast.remove());
-
-  setTimeout(() => {
-    toast.remove();
-  }, 5500);
+  alert(message);
 }
 
 function attachMobileMenu() {

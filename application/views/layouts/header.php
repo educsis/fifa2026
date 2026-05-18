@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="<?= base_url('assets/images/logo-sticky.svg') ?>" type="image/svg+xml">
+    <link rel="icon" href="<?= base_url('assets/images/mini.svg') ?>" type="image/svg+xml">
     <link rel="stylesheet" href="<?= base_url('assets/css/app.css') ?>">
     <script>
         window.APP_URL = '<?= rtrim(site_url(''), '/') ?>/';
