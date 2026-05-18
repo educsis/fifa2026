@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <div class="match-score">
                                 <div class="vs-row">
-                                    <span class="vs-label">VS</span>
+                                    <span class="vs-label"><img src="/assets/images/clock.png" width="20" height="20" /></span>
                                     <span class="match-time"><?= format_match_time($match['match_time']) ?></span>
                                 </div>
                                 <div class="match-score-grid">
