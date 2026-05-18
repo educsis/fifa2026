@@ -8,7 +8,7 @@ class Auth extends MY_Controller {
         $this->load->database();
         $this->load->library('form_validation');
         $this->load->helper(['url', 'form', 'security']);
-        $this->load->model('User_model');
+        $this->load->model(['User_model', 'Prediction_model']);
         $this->load->library('installer');
 
         if ($this->installer->install_needed()) {
@@ -98,6 +98,11 @@ class Auth extends MY_Controller {
         }
 
         $this->session->set_userdata(['user_id' => $user['id'], 'user_name' => $user['name']]);
+        $completed = $this->Prediction_model->count_completed($user['id']);
+        $missing = max(0, 48 - $completed);
+        if ($missing > 0) {
+            $this->session->set_flashdata('score_reminder', sprintf('Aún te faltan %d resultados por ingresar.', $missing));
+        }
         $this->session->set_flashdata('global_alert', lang('welcome_back'));
         redirect('rules');
     }

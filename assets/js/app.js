@@ -13,11 +13,16 @@ function updateCsrfToken(newHash) {
   }
 }
 
-function showToast(message, type = "success") {
+function showToast(message, type = "info") {
+  const icon =
+    type === "error" ? "error" : type === "success" ? "success" : "info";
+  const title =
+    type === "error" ? "Error" : type === "success" ? "Listo" : "Información";
+
   if (window.Swal && typeof window.Swal.fire === "function") {
     Swal.fire({
-      icon: type === "error" ? "error" : "success",
-      title: type === "error" ? "Error" : "Listo",
+      icon,
+      title,
       text: message,
       toast: true,
       position: "top-end",
@@ -190,4 +195,8 @@ document.addEventListener("DOMContentLoaded", () => {
   attachPredictionListeners();
   attachMobileMenu();
   startCountdownTimer();
+
+  if (window.LOGIN_SCORE_REMINDER) {
+    showToast(window.LOGIN_SCORE_REMINDER, "info");
+  }
 });

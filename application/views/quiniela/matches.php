@@ -34,7 +34,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="match-team">
                                 <span class="match-flag"><?= $match['home_flag'] ?></span>
                                 <div>
-                                    <span class="team-label">Local</span>
                                     <p class="team-name"><?= $match['home_team'] ?></p>
                                 </div>
                             </div>
@@ -53,7 +52,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <div class="match-team match-team-reverse">
                                 <div>
-                                    <span class="team-label">Visitante</span>
                                     <p class="team-name"><?= $match['away_team'] ?></p>
                                 </div>
                                 <span class="match-flag"><?= $match['away_flag'] ?></span>
