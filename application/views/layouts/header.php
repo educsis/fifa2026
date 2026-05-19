@@ -13,6 +13,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="<?= base_url('assets/images/mini.svg') ?>" type="image/svg+xml">
     <link rel="stylesheet" href="<?= base_url('assets/css/app.css') ?>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+    <style>
+        .fi-bg-sct {
+            background-image: url(<?= base_url('assets/images/gb-sct.svg') ?>);    
+        }
+    </style>
     <script>
         window.APP_URL = '<?= rtrim(site_url(''), '/') ?>/';
     </script>
@@ -55,11 +61,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <span class="pill-chip"><?= sprintf(lang('greeting_hello'), $this->session->userdata('user_name')) ?></span>
                 <a href="<?= site_url('logout') ?>" class="pill-button pill-light"><?= lang('menu_logout') ?></a>
             <?php endif; ?>
-            <span class="lang-current"><?= $current_lang === 'en' ? '🇺🇸 English' : '🇪🇸 Español' ?></span>
+            <span class="lang-current"><?= $current_lang === 'en' ? '<span class="fi fi-us"></span> English' : '<span class="fi fi-es"></span> Español' ?></span>
             <?php if ($current_lang === 'en'): ?>
-                <a href="<?= site_url('language/set/es') ?>" class="lang-toggle">🇪🇸 ES</a>
+                <a href="<?= site_url('language/set/es') ?>" class="lang-toggle"><span class="fi fi-es"></span> ES</a>
             <?php else: ?>
-                <a href="<?= site_url('language/set/en') ?>" class="lang-toggle">🇺🇸 EN</a>
+                <a href="<?= site_url('language/set/en') ?>" class="lang-toggle"><span class="fi fi-us"></span> EN</a>
             <?php endif; ?>
         </nav>
     </header>

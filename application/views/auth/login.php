@@ -5,22 +5,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <section class="hero-panel">
         <p class="eyebrow"><?= lang('auth_welcome') ?></p>
         <h2 class="section-title"><?= lang('auth_description') ?></h2>
-        <p class="section-subtitle"><?= lang('auth_description2') ?></p>
 
         <div class="info-grid">
-            <div class="info-card">
-                <p class="info-label"><?= lang('auth_register_title') ?></p>
-                <p class="info-value">Regístrate con tu correo corporativo</p>
-            </div>
-            <div class="info-card">
-                <p class="info-label"><?= lang('auth_login_title') ?></p>
-                <p class="info-value">Accede rápido sin contraseña</p>
-            </div>
+            <img src="<?= base_url('assets/images/fifa2026.jpg') ?>" alt="Ilustración de fútbol" class="info-image" loading="lazy" />
         </div>
 
         <div class="info-card info-card-spaced">
-            <p class="info-label"><?= lang('auth_countdown') ?></p>
-            <p class="form-info"><?= lang('auth_privacy') ?></p>
+         
             
             <div id="countdown" data-target="2026-06-10T00:00:00">Cargando cuenta regresiva...</div>
         </div>

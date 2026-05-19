@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="match-result-grid">
                     <div>
                         <span class="team-label">Grupo <?= $match['group_name'] ?></span>
-                        <p class="team-name"><?= $match['home_flag'] ?> <?= $match['home_team'] ?> vs <?= $match['away_team'] ?> <?= $match['away_flag'] ?></p>
+                        <p class="team-name"><span class="fi fi-<?= $match['home_flag'] ?>"></span> <?= $match['home_team'] ?> vs <?= $match['away_team'] ?> <span class="fi fi-<?= $match['away_flag'] ?>"></span></p>
                         <p class="section-copy"><?= format_match_date($match['match_date']) ?> · <?= format_match_time($match['match_time']) ?></p>
                     </div>
                     <div class="input-pair">

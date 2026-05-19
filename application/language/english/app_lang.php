@@ -55,3 +55,4 @@ $lang['rules_example_match3'] = 'Spain 1 - 2 Japan';
 $lang['rules_example_wrong'] = 'Missed prediction: 0 points';
 $lang['rules_start_button'] = 'Get started';
 $lang['auth_countdown'] = 'Count down to the FIFA 2026 World Cup: June 11, 2026';
+$lang['grupo'] = 'Group';

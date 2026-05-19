@@ -20,10 +20,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <section class="section-surface">
             <div class="match-date-row">
                 <div>
-                    <span class="section-tag section-tag-soft">Fecha</span>
-                    <h3 class="section-heading"><?= format_match_date($date) ?></h3>
+                    <h3 class="section-heading" style="display:flex;align-items:center;gap:8px;"><img src="/assets/images/date.png" width="20" height="20" /><?= format_match_date($date) ?></h3>
                 </div>
-                <span class="tag-pill">Horario en hora local</span>
             </div>
 
             <div class="match-list">
@@ -32,17 +30,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <article class="match-card">
                         <div class="match-line">
                             <div class="match-team">
-                                <span class="match-flag"><?= $match['home_flag'] ?></span>
+                                <span class="match-flag"><span class="fi fi-<?= $match['home_flag'] ?>"></span></span>
                                 <div>
                                     <p class="team-name"><?= $match['home_team'] ?></p>
                                 </div>
                             </div>
 
                             <div class="match-score">
-                                <div class="vs-row">
-                                    <span class="vs-label"><img src="/assets/images/clock.png" width="20" height="20" /></span>
-                                    <span class="match-time"><?= format_match_time($match['match_time']) ?></span>
-                                </div>
+                                
                                 <div class="match-score-grid">
                                     <input data-match-id="<?= $match['id'] ?>" data-side="home" type="number" min="0" value="<?= $prediction ? $prediction['home_goals'] : '' ?>" class="score-input prediction-input" <?= (int)$match['started'] === 1 ? 'disabled' : '' ?> />
                                     <span class="score-separator">-</span>
@@ -54,13 +49,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div>
                                     <p class="team-name"><?= $match['away_team'] ?></p>
                                 </div>
-                                <span class="match-flag"><?= $match['away_flag'] ?></span>
+                                <span class="match-flag"><span class="fi fi-<?= $match['away_flag'] ?>"></span></span>
                             </div>
                         </div>
 
                         <div class="match-meta">
-                            <span class="meta-chip">Grupo <?= $match['group_name'] ?></span>
-                            <span class="meta-chip"><?= format_match_date($match['match_date']) ?> · <?= format_match_time($match['match_time']) ?></span>
+                            <span class="meta-chip" style="font-weight: bold;"><?= lang('grupo') ?> <?= $match['group_name'] ?></span>
+                            <span class="match-time" style="display:flex;align-items:center;gap:8px;"><img src="/assets/images/clock.png" width="20" height="20" /><?= format_match_time($match['match_time']) ?></span>
                         </div>
 
                         <?php if ((int)$match['started'] === 1): ?>
