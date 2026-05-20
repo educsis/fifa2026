@@ -1,0 +1,37 @@
+name: Deploy CodeIgniter 3 to FTP
+
+on:
+  push:
+    branches:
+      - main # change if needed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+
+          # your CodeIgniter app location
+          server-dir: /public_html/
+
+          # safer deployment
+          dangerous-clean-slate: false
+
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .github/**
+            application/cache/**
+            application/logs/**
+            user_guide/**
+            README.md
