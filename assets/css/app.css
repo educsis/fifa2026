@@ -600,6 +600,7 @@ button {
   border: 1px solid var(--border);
   border-radius: 1rem;
   padding: 1.25rem;
+  box-shadow: var(--shadow);
 }
 
 .progress-card {
@@ -667,7 +668,7 @@ button {
 
 .match-card {
   padding: 1.25rem;
-  box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
 }
 
 .match-line {
