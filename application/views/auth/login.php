@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
         <div class="info-card info-card-spaced">
-         
+         <h1>test</h1>
             
             <div id="countdown" data-target="2026-06-10T00:00:00">Cargando cuenta regresiva...</div>
         </div>
